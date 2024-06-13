@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>welcome page</title>
+    <style>
+      #btn {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="welcome"></div>
+    <button id="btn" type="button">logout</button>
+    <script>
+      if (
+        window.sessionStorage.getItem("name") === null &&
+        window.sessionStorage.getItem("id") === null
+      ) {
+        document.getElementById(
+          "welcome"
+        ).textContent = `you need to login to see the content`;
+        document.getElementById("btn").style.display = "none";
+      } else {
+        document.getElementById(
+          "welcome"
+        ).textContent = `welcome ${window.sessionStorage.getItem(
+          "name"
+        )}  ${window.sessionStorage.getItem("id")}`;
+        document.getElementById("btn").style.display = "block";
+      }
+      document.getElementById("btn").addEventListener("click", () => {
+        window.sessionStorage.removeItem("name");
+        window.sessionStorage.removeItem("id");
+        location.reload();
+      });
+    </script>
+  </body>
+</html>

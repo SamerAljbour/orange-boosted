@@ -1,0 +1,39 @@
+
+.border-bottom{
+    border-bottom: 2px solid black !important;
+}
+#colorWhite:hover{
+    color: white  !important;
+    background-color: black;
+
+}
+#colorWhite{
+    color: black !important ;
+    background-color: white;
+}
+@media (max-width : 1023px){
+    #hideImage{
+        display: none !important;
+    }
+    #full{
+        width: 100% !important;
+        justify-content: center;
+    }
+    #half{
+        width: 50% !important;
+    }
+    
+    
+
+}
+@media  (max-width : 768px){
+
+    #half{
+
+            width: 100% !important;
+
+    }
+    
+    
+
+}
